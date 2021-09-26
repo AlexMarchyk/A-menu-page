@@ -1,0 +1,19 @@
+{
+  "name": "food_page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexMarchyk/A-menu-page.git"
+  },
+  "author": "Marchyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexMarchyk/A-menu-page/issues"
+  },
+  "homepage": "https://github.com/AlexMarchyk/A-menu-page#readme"
+}
