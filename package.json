@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AlexMarchyk/A-menu-page/issues"
   },
-  "homepage": "https://github.com/AlexMarchyk/A-menu-page#readme"
+  "homepage": "https://github.com/AlexMarchyk/A-menu-page#readme",
+  "devDependencies": {
+    "json-server": "^0.16.3"
+  }
 }
