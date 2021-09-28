@@ -314,6 +314,8 @@ fetch(' http://localhost:3000/menu')
     .then(data=>data.json())
     .then(res => console.log(res));
 
+
+
     // =================Slider=====================
     const slides =document.querySelectorAll('.offer__slide'),
           slider = document.querySelector('.offer__slider'),
@@ -326,6 +328,8 @@ fetch(' http://localhost:3000/menu')
           width = window.getComputedStyle(slidesWrapper).width;
     let slideIndex = 1;
     let offset = 0;
+
+    
     if(slides.length < 10){
             total.textContent = `0${slides.length}`;
             current.textContent =`0${slideIndex}`;
@@ -391,13 +395,15 @@ fetch(' http://localhost:3000/menu')
         dots.push(dot);
     }
 
-
+     function deleteNotDigits(str) {
+        return +str.replace(/\D/g, '');
+    }
 
     next.addEventListener('click',()=>{
-        if(offset == +width.slice(0, width.length -2) * (slides.length - 1)){
+        if(offset == deleteNotDigits(width) * (slides.length - 1)){
             offset = 0;
         }else{
-            offset += +width.slice(0, width.length -2);
+            offset += deleteNotDigits(width) ;
         }
         slidesField.style.transform = `translateX(-${offset}px)`;
 
@@ -419,9 +425,9 @@ fetch(' http://localhost:3000/menu')
     prev.addEventListener('click',()=>{
         if(offset == 0){
             
-            offset = +width.slice(0, width.length -2) * (slides.length - 1);
+            offset = deleteNotDigits(width)  * (slides.length - 1);
         }else{
-            offset -= +width.slice(0, width.length -2);
+            offset -= deleteNotDigits(width) ;
         }
         slidesField.style.transform = `translateX(-${offset}px)`;
 
@@ -446,7 +452,7 @@ fetch(' http://localhost:3000/menu')
             const  slideTo = e.target.getAttribute('data-slider-to');
 
             slideIndex= slideTo;
-            offset  = +width.slice(0, width.length -2) * (slideTo - 1);
+            offset  = deleteNotDigits(width)  * (slideTo - 1);
             
             slidesField.style.transform = `translateX(-${offset}px)`;
 
@@ -463,3 +469,5 @@ fetch(' http://localhost:3000/menu')
 
 
 });
+
+//npx json-server --watch db.json 
