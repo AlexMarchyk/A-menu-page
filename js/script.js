@@ -227,7 +227,7 @@ const forms = document.querySelectorAll('form');
 const message ={
     loading:"img/form/spinner.svg",
     succes:"Thanks",
-    failure:"Smtms wrong"
+    failure:"json-server disconnected"
 }
 forms.forEach(item=>{
     bindPostData(item);
